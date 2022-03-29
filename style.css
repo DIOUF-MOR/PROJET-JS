@@ -1,0 +1,239 @@
+body{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+     background-image: url(/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.conteneurPrincipal{
+   
+    padding: 10px 20px 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: black; */
+    border-radius: 10px;
+    height: 95vh;
+    width: 81.3%;
+    /* border: 2px solid black; */
+    /* margin: 10px; */
+}
+
+.entete{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    display: flex;
+    /* background-color: #edbb7c; */
+    flex-direction: column;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    color: white;
+    height: 12vh;
+    padding: 10px 10px 0;
+    /* background-image: linear-gradient(#a0ecc1fb,white,#a0ecc1fb,white,white,#a0ecc1fb); */
+}
+.entete button{
+    background: url('JOM.png') no-repeat center;
+    background-size: 5%;
+    width: 100%;
+    display: flex;
+    border: none;
+    border-left: black 10px solid;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-radius: 13px;
+    padding: 0.5rem;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.addTask:hover{
+   
+}
+
+.contener{
+   
+    /* background-image: linear-gradient(#a0ecc1fb,white,#a0ecc1fb,white,white,#a0ecc1fb); */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    display: flex;
+    /* justify-content: space-around; */
+    border-radius: 10px;
+    margin-top: 10px;
+    height: 80vh;
+}
+
+.collone{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border: 1px solid aqua;
+    width: 15vw;
+    height: 77vh;
+    margin: 10px;
+}
+
+.titre{
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: dimgray;
+    width: 14vw;
+    height: 5vh;
+    color: white;
+    /* justify-content: space-between; */
+    padding: 10px;
+}
+.titre i{
+    margin-left: 7vw;
+}
+
+.contentNote{
+    background: url('JOM.png') no-repeat center;
+    background-size: 75%;
+    width: 15vw;
+    height: 70vh;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+} 
+#valeurTache{
+    display: grid;
+    width: 95%;
+
+    /* border: #292E49 solid 1px; */
+    /* width: 70%;
+    height: 9vh; */
+}
+
+.divTache{
+    margin: 10px;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: #292E49 solid 1px;
+    border-radius: 5px;
+    width: 95%;
+
+
+}
+#buttonG{
+    /* visibility: hidden; */
+}
+
+.btn{
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: transparent;
+}
+#buttonD{
+    display: flex;
+    float: right;
+    /* margin-left: 11vw; */
+}
+
+.contentFormulaire{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formulaire{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    display: flex;
+    background-image: linear-gradient(#a0ecc1fb,white,#a0ecc1fb,white,white,#a0ecc1fb);
+    /* background-size: 80%;  */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: #292E49 solid 2px;
+    height: 25rem;
+    width: 25rem;
+    background-color: white;
+    /* border-radius: 50%; */
+}
+.corpFormulair{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 95%;
+    font-weight: bold;
+}
+.corpFormulair input{
+    height: 4vh;
+}
+
+.titreFormulaire{
+    display: flex;
+    align-items: center;
+    padding: 5px ;
+    background-color: #292E49;
+    color: white;
+    width: 95%;
+}
+.titreFormulaire i{
+    margin-left: 40%;
+}
+.divLabel{
+    margin-top: 10px;
+}
+.ajout{
+    margin-top: 10px;
+    height: 4vh;
+    
+}
+.fa-delete-left{
+    font-size: 2rem;
+}
+
+#modal{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalSpr{
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    height: 10rem;
+    border: #292E49 solid 1px;
+    background-color: antiquewhite;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: auto;
+}
+.divbtn{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+.btnModal{
+    width: 6vw;
+    height: 5vh;
+    font-size: 1.5rem;
+    border-radius: 5px;
+
+}
