@@ -2,11 +2,14 @@ body{
     overflow: hidden;
     display: flex;
     justify-content: center;
-     background-image: url(/background.jpg);
+    background-image: url(/background.jpg) ;
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
     min-width: 40%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    line-break: anywhere;
 }
 
 .conteneurPrincipal{
@@ -27,8 +30,10 @@ body{
 .entete{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     display: flex;
-    /* background-color: #edbb7c; */
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: url('JOM.png') no-repeat center;
+    background-size: 15%;
     border-radius: 10px;
     margin-bottom: 5px;
     color: white;
@@ -37,15 +42,23 @@ body{
     /* background-image: linear-gradient(#a0ecc1fb,white,#a0ecc1fb,white,white,#a0ecc1fb); */
 }
 .entete button{
-    background: url('JOM.png') no-repeat center;
-    background-size: 5%;
-    width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    width: 13%;
+    height: 6vh;
+    cursor: pointer;
+    background-color: transparent;
     display: flex;
+    justify-content: center;
     border: none;
     border-left: black 10px solid;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     border-radius: 13px;
+    border-right: black 10px solid;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
     padding: 0.5rem;
     margin-bottom: 5px;
     font-size: 1.5rem;
@@ -78,7 +91,8 @@ body{
     width: 18%;
     height: 77vh;
     margin: 10px;
-   
+    overflow-y: auto;   
+    overflow-x: hidden;
 }
 
 .titre{
@@ -106,13 +120,29 @@ body{
     border-bottom-right-radius: 10px;
     
 } 
-#valeurTache{
-    display: grid;
+.valeurTache{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 95%;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 0;
+    transform: translateY(19vh);
+    transition: transform 1s ease;
+}
+.valeurTacheAffiche{
+    transform: translateY(0);
+}
+#itache{
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: rgb(37, 37, 123);
+    padding: 5px;
+    width: 5%;
+    /* height: 20px; */
+    /* margin-left: 10%; */
 
-    /* border: #292E49 solid 1px; */
-    /* width: 70%;
-    height: 9vh; */
 }
 
 .divTache{
@@ -121,19 +151,73 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: #292E49 solid 1px;
+    background-color: rgb(99, 123, 167);
+    color: white;
     border-radius: 5px;
-    width: 95%;
-
+    width: 90%;
+    height: 17vh;
+    padding: 6px;
+    overflow: hidden;
+}
+.contentItache{
+    display: flex;
+    /* justify-content: space-between; */
+    /* padding: 0; */
 
 }
-#buttonG{
-    /* visibility: hidden; */
+
+.periodeTache{
+   /* display: none; */
+   /* background-color: aliceblue; */
+   height: 6vh;
+   border-radius: 5px;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.jotna{
+    background-color: lightseagreen;
+}
+
+/* .periodeTache:hover{
+   display: block;
+   /* padding: 3vh 0; */
+/* } */ 
+#contentTexarea{
+    font-weight: bold;
+    margin: auto;
+    padding: 10px;
+    /* background-color: aquamarine; */
+    margin-bottom: 10px;
+}
+#contentInputDate{
+    margin: 5px;
+    background-color: aqua;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+#contentInputTime{
+    margin: 5px;
+    background-color: rgb(0, 255, 64);
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+#contentInputTimefin{
+    margin: 5px;
+    background-color: rgb(255, 0, 0);
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 .btn{
     border: none;
-    font-size: 1.5rem;
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
     font-weight: bold;
     border-radius: 50%;
     background-color: transparent;
@@ -144,11 +228,14 @@ body{
     float: right;
     /* margin-left: 11vw; */
 }
+.btnrmv{
+
+}
 @keyframes bton{
     0%{
         transform: scale(0.5);
         color: white;
-        background-color: red;
+        background-color: rgb(26, 54, 3);
         border-radius: 50%;
     }
     25%{
@@ -159,13 +246,13 @@ body{
 
     }
     50%{
-        transform: scale(0.5);
+        transform: scale(1);
         color: white;
-        background-color: red;
+        background-color: rgb(36, 77, 4);
         border-radius: 50%;
     }
     75%{
-        transform: scale(1);
+        transform: scale(0.5);
         color: rgb(5, 24, 37);
         background-color: rgb(154, 255, 71);
         border-radius: 50%;
@@ -174,7 +261,7 @@ body{
     100%{
         transform: scale(1);
         color: white;
-        background-color: red;
+        background-color: rgb(28, 59, 2);
         border-radius: 50%;
         
     }
@@ -183,6 +270,19 @@ body{
     display: none;
 } 
 .collone:last-child .divTache #buttonD{
+    display: none;
+}
+.collone .contentItache .restaurer{
+    display: none;
+    
+}
+.contentCorbeille .contentItache #itache{
+    display: none;
+}
+.contentCorbeille .divTache #buttonD{
+    display: none;
+}
+.contentCorbeille .divTache #buttonG{
     display: none;
 }
 
@@ -199,6 +299,7 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 .formulaire{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     display: flex;
@@ -260,39 +361,289 @@ body{
     justify-content: center;
     align-items: center;
 }
+.modal{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #modalSpr{
     display: flex;
     flex-direction: column;
-    width: 50rem;
-    height: 20rem;
-    border: #292E49 solid 1px;
+    width: 35rem;
     background: url('JOM.png') no-repeat center;
-    background-image: linear-gradient(#a0ecc1fb,white,#a0ecc1fb,white,white,#a0ecc1fb);
-    background-size: 50%;
+    background-size: 40%;
+    background-color: thistle;
     font-size: 1.5rem;
     font-weight: bold;
-    border-radius: 10px;
+    padding:0% 3% 2% 3%;
     margin: auto;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .divbtn{
     display: flex;
     justify-content: space-between;
-    padding:0 20px;
+    padding:0 40px;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 9rem;
 }
 .btnModal{
-    width: 7rem;
-    height: 3.5rem;
+   
     font-size: 1.5rem;
     border-radius: 7px;
     background-color: mediumaquamarine;
+    border: none;
+    padding: 2% 3%;
 }
-.btnModal:hover{
-    width: 7rem;
-    height: 7rem;
-    animation: bton 2s ease-in-out infinite; 
+
+#suprimer{
+    animation: btonSuprimer 2s ease-in-out infinite; 
+}
+@keyframes btonSuprimer{
+    0%{
+        transform: scale(0.5);
+        color: white;
+        background-color: red;
+        /* border-radius: 50%; */
+    }
+    25%{
+        transform: scale(1);
+        color: rgb(5, 24, 37);
+        background-color: red;
+        /* border-radius: 50%; */
+
+    }
+    50%{
+        transform: scale(1);
+        color: white;
+        background-color: red;
+        /* border-radius: 50%; */
+    }
+    75%{
+        transform: scale(0.5);
+        color: rgb(5, 24, 37);
+        background-color: red;
+        /* border-radius: 50%; */
+
+    } 
+     100%{
+        transform: scale(1);
+        color: white;
+        background-color: rgb(28, 59, 2);
+        /* border-radius: 50%; */
+        
+    }
+}
+#annuler{
+    animation: btonAnnuler 2s ease-in-out infinite; 
 
 }
+ @keyframes btonAnnuler{
+    0%{
+        transform: scale(0.5);
+        color: white;
+        background-color: rgb(26, 54, 3);
+    }
+    25%{
+        transform: scale(1);
+        color: rgb(5, 24, 37);
+        background-color: rgb(154, 255, 71);
+
+    }
+    50%{
+        transform: scale(1);
+        color: white;
+        background-color: rgb(36, 77, 4);
+    }
+    75%{
+        transform: scale(0.5);
+        color: rgb(5, 24, 37);
+        background-color: rgb(154, 255, 71);
+
+    }
+    100%{
+        transform: scale(1);
+        color: white;
+        background-color: rgb(28, 59, 2);
+        
+    }
+} 
+.msgModal{
+    display: flex;
+    margin-top: 30px;
+}
+.contentCorbeille{
+    position: absolute;
+    top: 1vh;
+    right: 0;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    margin: 10px;
+    margin-top: 17vh;
+    width: 20vw;
+    height: 77vh;
+    border: cadetblue solid 1px;
+    background: url('JOM.png') no-repeat center;
+    background-size: 85%;
+    border-radius: 10px;
+    transform: translateX(42vw);
+    transition: transform 1s ease;
+    background-color: rgb(51, 47, 41);
+    overflow-y: auto;   
+    overflow-x: hidden;
+}
+ 
+.btnCorbeille{
+    position: absolute;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0%; 
+    display: none;
+     
+}
+.viderCache{
+    background-color: red;
+    border: none;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.restaurer{
+    background-color: rgb(29, 29, 86);
+    border: none;
+    padding: 0 1px;
+    color: white;
+    font-size: 1rem;
+}
+.visibleButton{
+    /* visibility: visible; */
+}
+.fa-trash{
+    
+    font-size: 2rem;
+}
+.corbeille{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: white; */
+    background-color: transparent;
+    /* background-image: url(/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 2px; */
+    
+}
+.tachCorbeille{
+    display: grid;
+    grid-auto-flow: column;
+    width: 90%;
+    height: 10vh;
+    align-items: center;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.block{
+    transform: translateX(0);
+}
+
+
+.notifier{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+background-color: aliceblue;
+border-top-left-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+ width: 30%;
+    height:10% ;
+    right: 20px;
+    bottom: 20px;
+    transform: translateY(20vh);
+    transition: transform 1s ease;
+}
+.afficheNotifier{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+background-color: aliceblue;
+border-top-left-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+ width: 30%;
+    height:10% ;
+    right: 20px;
+    bottom: 20px;
+    font-size: 1.5rem;
+    transform: translateY(0);
+    
+}
+.succes{
+    background-color: rgb(106, 109, 104);
+    color: white;
+}
+.info{
+    color: white;
+    background-color: rgb(76, 76, 211)
+}
+.warcing{
+    color: red;
+}
+.kenburns-bottom {
+	/* -webkit-animation: kenburns-bottom 5s ease-out both; */
+	        animation: kenburns-bottom 5s ease-out both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2022-4-3 0:0:55
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation kenburns-bottom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes kenburns-bottom {
+    0% {
+      -webkit-transform: scale(1) translateY(0);
+              transform: scale(1) translateY(0);
+      -webkit-transform-origin: 50% 84%;
+              transform-origin: 50% 84%;
+    }
+    100% {
+      -webkit-transform: scale(1.25) translateY(15px);
+              transform: scale(1.25) translateY(15px);
+      -webkit-transform-origin: bottom;
+              transform-origin: bottom;
+    }
+  }
+  @keyframes kenburns-bottom {
+    0% {
+      -webkit-transform: scale(1) translateY(0);
+              transform: scale(1) translateY(0);
+      -webkit-transform-origin: 50% 84%;
+              transform-origin: 50% 84%;
+    }
+    100% {
+      -webkit-transform: scale(1.25) translateY(15px);
+              transform: scale(1.25) translateY(15px);
+      -webkit-transform-origin: bottom;
+              transform-origin: bottom;
+    }
+  }
+  

@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://kit.fontawesome.com/df9b9c7762.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>projet js</title>
 </head>
 
@@ -45,8 +47,12 @@
     </aside>
     <div class="conteneurPrincipal">
         <div class="entete">
-            <button class="addTask animate__animated animate__wobble" id="addColom">+ Colonne</button>
-            <button class="addTask animate__animated animate__fadeInRight" id="addNote">+ Note</button>
+            <button class="addTask animate__animated animate__flip" id="addColom">+ Colonne</button>
+            <button class="addTask animate__animated animate__flip" id="addNote">+ Note</button>
+            <button class="addTask animate__animated animate__flip" id="addNote">Save</button>
+            <button class="corbeille animate__animated animate__flip">
+                <i class="fa-solid fa-trash"></i>
+            </button>
         </div>
         <div class="contener">
             <!-- <div class="collone">
@@ -63,7 +69,16 @@
             </div> -->
         </div>
     </div>
-    <script src="scripte.js"></script>
+    <div class="contentCorbeille">
+        <!-- <div class="btnCorbeille">
+            <button class="viderCache">Vider</button>
+            <button class="restaurer">Restaurer</button>
+        </div> -->
+    </div>
+    <div class="notifier">
+        <h3 >notifier</h3>
+    </div>
 </body>
 
 </html>
+<script src="scripte.js"></script>
