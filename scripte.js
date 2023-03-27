@@ -7,8 +7,39 @@ const addNote = document.getElementById('addNote');
 const contener = document.querySelector('.contener');
 const ajout = document.querySelector('.ajout')
 const corbeille = document.querySelector('.corbeille')
+const select = document.querySelector("#selectEtat")
+
 
 let i = 0
+
+
+
+
+window.onload = async function(){
+
+    let array = await findToJson()
+
+    array.Etat.forEach(el => {
+        // console.log(el.date)
+        let option = document.createElement("option")
+        option.innerHTML = el.date
+        option.setAttribute("data-date", el.date)
+        select.appendChild(option)
+    });
+
+    select.addEventListener("change", ()=>{
+        alert("ok")
+    })
+
+
+    
+
+}
+
+
+
+
+
 addColom.addEventListener('click', function () {
 
     if (contener.childElementCount < 5) {
@@ -17,13 +48,14 @@ addColom.addEventListener('click', function () {
         refreche()
     } else {
         notification('Attention le maximum de colonne est atteint', 'info')
-        console.log(mbouss(notification('Attention le maximum de colonne est atteint', 'info')));
+        // console.log(mbouss(notification('Attention le maximum de colonne est atteint', 'info')));
     }
-
 })
+
 corbeille.addEventListener('click', () => {
     contentCorbeille.classList.toggle('block')
 })
+
 addNote.addEventListener('click', function () {
     if (contener.childElementCount != 0) {
         body.appendChild(creatFormulaire())
@@ -260,6 +292,8 @@ function recupereNote(parent) {
                 contentItache.classList.add('viderCache')
                 vider.innerHTML = 'vider'
                 vider.classList.add('cacher')
+                notification('TACHE SUPRIMER AVEC SUCCES', 'info')
+
             })
             let vider = document.createElement('button')
             vider.className = 'restaurer';
@@ -353,13 +387,16 @@ function refreche() {
         element.parentElement.parentElement.id = i + 1;
     })
 }
-function mbouss(conteur) {
+function mbouss() {
     const modal = document.createElement('div');
-    modal.setAttribute('class', 'modal')
-    modal.appendChild(conteur);
+    modal.setAttribute('class', 'modale')
+    const contentdata = document.createElement('div');
+    contentdata.setAttribute('class', 'contentdata')
+    // contentdata.appendChild(recuperJson());
+    modal.appendChild(contentdata);
     body.appendChild(modal);
 
-    return body
+    return contentdata
 }
 
 const sms = document.querySelector('h3')
@@ -413,6 +450,8 @@ const saveEtat = document.getElementById('save');
 saveEtat.addEventListener('click', function () {
     var tabColonne = document.querySelectorAll('.collone');
     let tabColine = []
+    var moment = new Date();
+
     for (let i = 0; i < tabColonne.length; i++) {
         let h3 = "collone" + i
         let contentNote = tabColonne[i].querySelector(".contentNote")
@@ -433,12 +472,51 @@ saveEtat.addEventListener('click', function () {
             method: "POST",
             body: JSON.stringify(
                 {
-                    Etat: tabColine
+                    date: new Date(),
+                    moment: tabColine
                 }
             )
         })
+    notification('ETAT ENRGISTRER AVEC SECCEs', 'info')
 
 })
+
+// async function recuperJson() {
+
+//     const resultat = await fetch(serigne + 'lister_state', { method: 'GET' });
+//     const data = await resultat.json()
+//     const p = document.createElement('p')
+//     let cle = Object.keys(data)
+//     console.log(cle);
+//     cle.forEach(element => {
+//         p.innerText += element
+//     })
+//     p.addEventListener('click', () => {
+//         let trouve = data[p.innerText]
+//         console.log(p.innerText, trouve);
+//     })
+
+//     // console.log(data)
+//     const bady = mbouss()
+//     bady.appendChild(p)
+// }
+
+async function findToJson() {
+    try {
+        let response = await fetch(serigne + 'lister_state')
+        return await response.json()
+    } catch (error) {
+
+    }
+}
+
+
+const listerEtat = document.getElementById('lister');
+listerEtat.addEventListener('click', function () {
+    recuperJson();
+
+})
+
 
 
 
